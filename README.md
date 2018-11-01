@@ -1,2 +1,5 @@
 # iamsanjaysingh.github.io
-Portfolio
+The portfolio currently in development. 
+The portfolio will be available once it has been completed.
+
+In addition take a look at online version of my resume.
