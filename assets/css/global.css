@@ -329,3 +329,30 @@ textarea {
 /*----------------
 	5.3) Accordion */
 
+/*----------------
+	5.4) Pagepiling */
+
+#pp-nav span,
+.pp-slidesNav span {
+	position: relative !important;
+	top: 0 !important;
+	left: 0 !important;
+	display: block;
+}
+#pp-nav li a,
+.pp-slidesNav li a {
+	display: inline-block !important;
+	width: auto !important;
+	height: auto !important;
+}
+#pp-nav li,
+.pp-slidesNav li {
+	display: block !important;
+	width: auto !important;
+	height: auto !important;
+	margin: 8px 0 !important;
+}
+#pp-nav.right {
+	right: 0 !important;
+	display: none;
+}
