@@ -1,0 +1,331 @@
+/*----------------------------------------
+ Garbage Styling :: Delete after use
+----------------------------------------*/
+
+/*----------------------------------------
+1)			SiteBlock Style
+----------------------------------------*/
+
+/*----------------
+	1.1) Body Style */
+
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	font: normal normal 400 100%/1.2 'Work Sans', sans-serif;
+	height: 100%;
+	color: rgb(0, 0, 0);
+	user-select: none;
+}
+
+/*----------------
+	1.2) Container Style */
+
+#wrapper {
+	overflow: hidden;
+	position: relative;
+	min-height: 100%;
+}
+
+.container {
+	max-width: 1192px;
+	width: calc(100% - 40px);
+	margin: 0 auto;
+}
+
+/*----------------------------------------
+2)			Global Typography
+----------------------------------------*/
+
+/*----------------
+	2.1) Heading */
+
+h1 {
+	font-family: inherit;
+	font-weight: 900;
+	font-size: 16rem;
+	line-height: 1;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+h2 {
+	font-family: inherit;
+	font-weight: 700;
+	font-size: 8rem;
+	line-height: inherit;
+	letter-spacing: 0.005rem;
+}
+
+h3 {
+	font-family: inherit;
+	font-weight: 700;
+	font-size: 4rem;
+	line-height: inherit;
+	letter-spacing: 0.005rem;
+}
+
+h4 {
+	font-family: inherit;
+	font-size: 2.8rem;
+}
+
+h5 {
+	font-family: inherit;
+}
+
+h6 {
+	font-family: inherit;
+}
+
+/*----------------
+	2.2) Text Content */
+
+p {
+	font-size: 1.6rem;
+	text-align: justify;
+	margin-bottom: 15px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.thin {
+	font-weight: 100;
+}
+.extralight {
+	font-weight: 200;
+}
+.light {
+	font-weight: 300;
+}
+.regular {
+	font-weight: 400;
+}
+.medium {
+	font-weight: 500;	
+}
+.semibold {
+	font-weight: 600;	
+}
+.bold {
+	font-weight: 700;
+}
+.extrabold {
+	font-weight: 800;
+}
+.black {
+	font-weight: 900;
+}
+
+/*----------------
+	2.3) Text Alignment */
+
+.alignC {
+	text-align: center;
+}
+.alignR {
+	text-align: right;
+}
+.alignL {
+	text-align: left;
+}
+
+.paraC p {
+	text-align: center;
+}
+.paraR p {
+	text-align: right;
+}
+.paraL p {
+	text-align: left;
+}
+
+/*----------------
+	2.4) List Style */
+
+.list li {
+	padding-left: 18px;
+	position: relative;
+	font-size: 1.6rem;
+}
+.list li::before {
+	content: '';
+	position: absolute;
+	left: 2px;
+	top: calc(50% - 2px);
+	width: 6px;
+	height: 6px;
+	border-radius: 2px;
+	background-color: rgba(0, 0, 0, 1);
+}
+
+.sideList {
+	position: absolute;
+    right: -40px;
+    color: rgb(248, 248, 248);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    z-index: 2;
+    transition: right 0.5s ease-in-out;
+}
+.sideList.show {
+	right: 20px;
+}
+.sideList a {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+.sideList a:hover {
+    color: rgb(0, 0, 0);
+    transform: scale(1.2);
+}
+
+/*----------------------------------------
+3)			Global Class
+----------------------------------------*/
+
+/*----------------
+	3.1) Clearfix */
+
+.clearfix::before,
+.clearfix::after {
+	content: '';
+	display: table;
+}
+.clearfix::after {
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+
+/*----------------
+	3.2) Float helping class */
+
+.floatL {
+	float: left !important;
+}
+.floatR {
+	float: right !important;
+}
+.clearL {
+	clear: left;
+}
+.clearR {
+	clear: right;
+}
+
+/*----------------
+	3.3) Flex helping class */
+
+[class^='flex'] {
+	display: flex;
+}
+.flexV-Center {
+	align-items: center;
+}
+.flexH-Center {
+	justify-content: center;
+}
+.flexVH-Center {
+	align-items: center;
+	justify-content: center;
+}
+.flexV-T {
+    align-items: flex-start;
+}
+.flexV-B {
+    align-items: flex-end;
+}
+.flexH-L {
+    justify-content: flex-start;
+}
+.flexH-R {
+    justify-content: flex-end;
+}
+.flexNowrap {
+	flex-wrap: wrap;
+}
+
+/*----------------
+	3.4) Width helping class */
+
+.col-two > .col {
+	width: 50%;
+}
+.col-three > .col {
+	width: 33.3%;
+}
+.col-four > .col {
+	width: 25%;
+}
+
+/*----------------
+	3.5) Width helping class */
+
+.button {
+	display: inline-block;
+	padding: 8px 16px;
+	font-size: 1.8rem;
+	font-weight: 500;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	text-transform: uppercase;
+	letter-spacing: 0.02rem;
+	background-color: rgb(248, 248, 248);
+	border-color: rgb(255, 88, 81);
+	transition: all 0.2s ease-in-out;
+}
+.button.button:hover {
+	background-color: rgb(255, 88, 81);
+	border-color: rgb(248, 248, 248);
+}
+
+/*----------------------------------------
+4)			Form Element
+----------------------------------------*/
+
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 2.2rem;
+	font-weight: 600;
+	padding: 10px 25px;
+	color: inherit;
+	background-color: rgb(248, 248, 248);
+	border-radius: 10px;
+	line-height: inherit;
+	width: 100%;
+}
+textarea {
+	min-height: 300px;
+	padding: 10px 15px;
+	resize: none;
+}
+
+/*----------------------------------------
+5)			Html Identity
+----------------------------------------*/
+
+/*----------------
+	5.1) Pointer */
+
+/*----------------
+	5.2) Tab */
+
+/*----------------
+	5.3) Accordion */
+
