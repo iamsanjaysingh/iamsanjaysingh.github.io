@@ -1,10 +1,19 @@
-//costumcursor
+//Preload
+function preload() {
+    $(document).ready(function () {
+        setTimeout(function() {
+            $('#preloader').addClass('hide');
+        }, 2000);
+    });
+}
+
+//CostumCursor
 new kursor({
     type: 4,
     removeDefaultCursor: true
 });
 
-//mcostumscrollbar
+//mCostumScrollBar
 (function($){
     $(window).on('load',function(){
         $('body').mCustomScrollbar({
@@ -29,7 +38,7 @@ $(document).ready(function (){
         $(this).parents('#header').addClass('close');
         $(this).parents('.headerBlock').find('.headerBorder').css('border-color', $(this).find('span').css('color'));
         $(this).parents('#wrapper').find('.page').removeClass('active');
-        //ToShowView
+        //ToShowViewPage
         $(this).parents('#wrapper').find('#'+$(this).attr('class')).addClass('active');
     });
     

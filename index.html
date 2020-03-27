@@ -15,7 +15,16 @@
     <link rel='stylesheet' type='text/css' href='https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap'>
 </head>
-<body>
+<body onload='preload()'>
+    <div id='preloader'>
+        <div class='loader'>
+            <div class='d1'></div>
+            <div class='d2'></div>
+            <div class='d3'></div>
+            <div class='d4'></div>
+            <div class='d5'></div>
+        </div>
+    </div>
     <div id='wrapper'>
         <header id='header'></header>
         <main>
@@ -54,9 +63,9 @@
         </main>
         <footer id='footer'></footer>
     </div>
-    <script text='application/jscript' src='https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js'></script>
-    <script text='application/jscript' charset='UTF-8' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
-    <script text='application/jscript' charset='UTF-8' src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js'></script>
-    <script text='application/jscript' charset='UTF-8' src='assets/js/application.js'></script>
+    <script text='application/javascript' src='https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js'></script>
+    <script text='application/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
+    <script text='application/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js'></script>
+    <script text='application/javascript' src='assets/js/application.js'></script>
 </body>
 </html>
