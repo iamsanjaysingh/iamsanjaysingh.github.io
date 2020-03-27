@@ -35,6 +35,16 @@ body {
 	width: calc(100% - 40px);
 	margin: 0 auto;
 }
+.page {
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+}
+.page.active {
+	opacity: 1;
+	visibility: visible;
+	display: block;
+}
 
 /*----------------------------------------
 2)			Global Typography
@@ -100,34 +110,6 @@ a {
 	text-decoration: none;
 }
 
-.thin {
-	font-weight: 100;
-}
-.extralight {
-	font-weight: 200;
-}
-.light {
-	font-weight: 300;
-}
-.regular {
-	font-weight: 400;
-}
-.medium {
-	font-weight: 500;	
-}
-.semibold {
-	font-weight: 600;	
-}
-.bold {
-	font-weight: 700;
-}
-.extrabold {
-	font-weight: 800;
-}
-.black {
-	font-weight: 900;
-}
-
 /*----------------
 	2.3) Text Alignment */
 
@@ -176,7 +158,7 @@ a {
     color: rgb(248, 248, 248);
     top: 50%;
     transform: translateY(-50%);
-    font-size: 3em;
+    font-size: 3rem;
     z-index: 2;
     transition: right 0.5s ease-in-out;
 }
@@ -230,45 +212,52 @@ a {
 /*----------------
 	3.3) Flex helping class */
 
-[class^='flex'] {
+.flex {
 	display: flex;
 }
-.flexV-Center {
+.flex-v-Center {
+	display: flex;
 	align-items: center;
 }
-.flexH-Center {
+.flex-h-Center {
+	display: flex;
 	justify-content: center;
 }
-.flexVH-Center {
+.flex-vh-Center {
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.flexV-T {
+.flex-v-top {
+	display: flex;
     align-items: flex-start;
 }
-.flexV-B {
+.flex-v-bottom {
+	display: flex;
     align-items: flex-end;
 }
-.flexH-L {
+.flex-h-left {
+	display: flex;
     justify-content: flex-start;
 }
-.flexH-R {
+.flex-h-right {
+	display: flex;
     justify-content: flex-end;
 }
-.flexNowrap {
+.flexwrap {
 	flex-wrap: wrap;
 }
 
 /*----------------
 	3.4) Width helping class */
 
-.col-two > .col {
+.col-two .col {
 	width: 50%;
 }
-.col-three > .col {
+.col-three .col {
 	width: 33.3%;
 }
-.col-four > .col {
+.col-four .col {
 	width: 25%;
 }
 
@@ -328,31 +317,3 @@ textarea {
 
 /*----------------
 	5.3) Accordion */
-
-/*----------------
-	5.4) Pagepiling */
-
-#pp-nav span,
-.pp-slidesNav span {
-	position: relative !important;
-	top: 0 !important;
-	left: 0 !important;
-	display: block;
-}
-#pp-nav li a,
-.pp-slidesNav li a {
-	display: inline-block !important;
-	width: auto !important;
-	height: auto !important;
-}
-#pp-nav li,
-.pp-slidesNav li {
-	display: block !important;
-	width: auto !important;
-	height: auto !important;
-	margin: 8px 0 !important;
-}
-#pp-nav.right {
-	right: 0 !important;
-	display: none;
-}

@@ -1,54 +1,72 @@
-header#header {
+#header {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 9;
-    transform: translateX(-100%);
-    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
-}
-header#header.active {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     transform: translateX(0%);
+    transition: all 0.25s cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
+#header.close {
+    transform: translateX(-100%);
+}
+
 .headerBlock {
+    width: calc(100% - 20px);
+    height: calc(100% - 40px);
+    padding: 20px 20px 20px 0;
+    box-sizing: border-box;
     position: relative;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: calc(100% - 40px);
-    height: calc(100% - 80px);
-    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
+.headerBlock::before,
+.headerBlock::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 20px;
+    background: #f8f8f8;
+}
+.headerBlock::before {
+    top: 0;
+}
+.headerBlock::after {
+    bottom: 0;
+}
+.headerBorder {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 0;
+    height: 100%;
+    border-width: 20px 20px 20px 0;
+    border-style: solid;
+    border-color: #d6d6d6;
+    box-sizing: border-box;
+    z-index: 2;
+    transition: all 0s linear .25s;
+}
+
 .headerContent {
     padding-left: 75px;
+    position: relative;
+    z-index: 3;
 }
+
 .headerContent .name {
     font-weight: 700;
     font-size: 1.4rem;
     text-transform: uppercase;
 }
-.contactBlock {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-}
-.contactBlock a {
-    font-size: 1.2rem;
-    display: inline-block;
-    font-weight: 600;
-}
-.contactBlock a:not(:first-child):hover {
-    text-decoration: underline;
-}
-.contactBlock address {
-    font-weight: 400;
-    margin-bottom: 8px;
-}
+
 #navigation {
     padding: 20px 0 80px;
     font-weight: 800;
@@ -59,6 +77,7 @@ header#header.active {
     display: inline-block;
     padding: 5px 15px;
     position: relative;
+    cursor: pointer;
 }
 #navigation a.home span {
     color: rgb(255, 88, 81);
@@ -69,7 +88,7 @@ header#header.active {
 #navigation a.experience span {
     color: rgb(52, 152, 219);
 }
-#navigation a.education span {
+#navigation a.qualification span {
     color: rgb(82, 190, 128);
 }
 #navigation a.contact span {
@@ -84,78 +103,85 @@ header#header.active {
     z-index: 1;
     transition: width .25s cubic-bezier(1, 0, 0, 1);
 }
+#navigation a.home i {
+    background: rgba(255, 88, 81, 0.25);
+}
+#navigation a.skill i {
+    background: rgba(243, 193, 48, 0.25);
+}
+#navigation a.experience i {
+    background: rgba(52, 152, 219, 0.25);
+}
+#navigation a.qualification i {
+    background: rgba(82, 190, 128, 0.25);
+}
+#navigation a.contact i {
+    background: rgba(149, 165, 166, 0.25);
+}
 #navigation a:hover i {
     width: 100%;
 }
-#navigation a.home i {
-    background-color: rgba(255, 88, 81, 0.25);
+
+.contactBlock {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 }
-#navigation a.skill i {
-    background-color: rgba(243, 193, 48, 0.25);
+.contactBlock address {
+    font-weight: 400;
+    margin-bottom: 8px;
 }
-#navigation a.experience i {
-    background-color: rgba(52, 152, 219, 0.25);
+.contactBlock a {
+    font-size: 1.2rem;
+    display: inline-block;
+    font-weight: 600;
 }
-#navigation a.education i {
-    background-color: rgba(82, 190, 128, 0.25);
+.contactBlock a:not(:first-child):hover {
+    text-decoration: underline;
 }
-#navigation a.contact i {
-    background-color: rgba(149, 165, 166, 0.25);
-}
+
+
 
 
 #headerToggle {
     position: absolute;
-    width: 72px;
-    height: 42px;
-    left: calc(100% + 140px);
+    width: 68px;
+    height: 38px;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 4;
     cursor: pointer;
-    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+    transition: all 0.25s cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
+#header.close #headerToggle {
+    left: 100%;
+}
+
 #headerToggle::after {
     content: '';
     position: absolute;
-    width: 42px;
-    height: 42px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 22px;
-    border: 1px solid rgb(0, 0, 0);
+    width: 38px;
+    height: 38px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 1px solid #000000;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: #ffffff;
 }
-#headerToggle small {
-    position: absolute;
-    text-transform: uppercase;
-    font-weight: 600;
-    top: 50%;
-    font-size: 1rem;
-    letter-spacing: 0.2rem;
-    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+#headerToggle:hover::after {
+    background: #000000;
 }
-#headerToggle small.open {
-    transform: translateY(-50%) translateX(35%) rotate(-90deg);
-    right: 0;
-}
-#headerToggle small.close {
-    transform: translateY(-50%) translateX(-35%) rotate(-90deg);
-    left: 0;
-    opacity: 0;
-}
-#header.active #headerToggle small.close {
-    opacity: 1;
-}
-#header.active #headerToggle small.open {
-    opacity: 0;
-}
+
+
 #headerToggle i {
     position: absolute;
     left: 50%;
     top: 50%;
     height: 2px;
-    background-color: rgb(0, 0, 0);
+    background: transparent;
     width: 12px;
     transform: translate(-50%, -50%);
     transition: all 0.25s ease-in-out;
@@ -167,35 +193,67 @@ header#header.active {
     width: calc(100% + 4px);
     height: 2px;
     position: absolute;
-    background-color: rgb(0, 0, 0);
+    background: #000000;
     left: 50%;
+    transform: translateY(-50%);
     transition: all 0.25s ease-in-out;
 }
+#headerToggle i::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
 #headerToggle i::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#headerToggle:hover i::before,
+#headerToggle:hover i::after {
+    background: #ffffff;
+}
+
+
+#header.close #headerToggle i {
+    background: #000000;
+}
+#header.close #headerToggle:hover i {
+    background: #ffffff;
+}
+#header.close #headerToggle i::before {
     top: 0;
     transform: translateY(-4px) translateX(-50%);
 }
-#headerToggle i::after {
+#header.close #headerToggle i::after {
     bottom: 0;
     transform: translateY(4px) translateX(-50%);
 }
-#headerToggle:hover::after {
-    background-color: rgb(0, 0, 0);
+
+
+
+
+
+
+#headerToggle small {
+    position: absolute;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0;
+    transform: translateY(-50%) rotate(270deg);
+    text-transform: uppercase;
+    top: 50%;
+    line-height: 1;
+    transition: all 0.25s ease-in-out;}
+#headerToggle small:first-of-type {
+    right: -8px;
+    opacity: 0;
 }
-#headerToggle:hover i::before,
-#headerToggle:hover i::after,
-#headerToggle:hover i {
-    background-color: rgb(255, 255, 255);
+#headerToggle small:last-of-type {
+    left: -8px;
 }
-#header.active #headerToggle {
-    left: 0;
+#header.close #headerToggle small:first-of-type {
+    opacity: 1;
 }
-#header.active #headerToggle i {
-    background-color: transparent;
+#header.close #headerToggle small:last-of-type {
+    opacity: 0;
 }
-#header.active #headerToggle i::after {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-#header.active #headerToggle i::before {
-    transform: translate(-50%, -50%) rotate(-45deg);
+#headerToggle:hover small {
+    opacity: 0 !important;
 }
