@@ -3,7 +3,7 @@ function preload() {
     $(document).ready(function () {
         setTimeout(function() {
             $('#preloader').addClass('hide');
-        }, 2000);
+        }, 1000);
     });
 }
 
