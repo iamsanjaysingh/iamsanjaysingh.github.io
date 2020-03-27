@@ -1,7 +1,17 @@
+//costumcursor
 new kursor({
-    type: 1,
+    type: 4,
     removeDefaultCursor: true
 });
+
+//mcostumscrollbar
+(function($){
+    $(window).on('load',function(){
+        $('body').mCustomScrollbar({
+            theme: 'rounded-dark'
+        });
+    });
+})(jQuery);
 
 $(document).ready(function (){
 
