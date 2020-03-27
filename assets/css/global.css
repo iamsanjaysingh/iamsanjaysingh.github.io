@@ -58,7 +58,6 @@ h1 {
 	font-family: inherit;
 	font-weight: 900;
 	font-size: 16rem;
-	line-height: 1;
 	letter-spacing: 0;
 	text-transform: uppercase;
 	white-space: nowrap;
@@ -339,8 +338,9 @@ textarea {
 
 #preloader {
 	position: fixed;
-	left: 0;
-	top: 0;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	width: 100%;
 	height: 100vh;
 	z-index: 10;
@@ -349,6 +349,8 @@ textarea {
 }
 #preloader.hide {
 	opacity: 0;
+	height: 0;
+	width: 0;
 	visibility: hidden;
 }
 
