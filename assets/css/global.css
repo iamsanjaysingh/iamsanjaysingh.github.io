@@ -326,6 +326,8 @@ textarea {
 }
 .mCSB_scrollTools {
 	width: 8px !important;
+	opacity: 0 !important;
+    visibility: hidden !important;
 }
 .mCSB_dragger_bar {
 	width: 6px !important;
