@@ -7,11 +7,12 @@ function preload() {
     });
 }
 
+// TODO >> DELETE KURSOR JS
 //CostumCursor
-new kursor({
-    type: 4,
-    removeDefaultCursor: true
-});
+// new kursor({
+//     type: 4,
+//     removeDefaultCursor: true
+// });
 
 //mCostumScrollBar
 (function($){
