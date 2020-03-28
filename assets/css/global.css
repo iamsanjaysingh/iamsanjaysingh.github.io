@@ -8,18 +8,18 @@
 
 /*----------------
 	1.1) Body Style */
-
+* {
+	cursor: none;
+}
 html {
 	height: 100%;
 	font-size: 62.5%;
 }
-
 body {
 	font: normal normal 400 100%/1.2 'Work Sans', sans-serif;
 	height: 100%;
 	color: rgb(0, 0, 0);
 	user-select: none;
-	/* cursor: none; */
 }
 
 /*----------------
@@ -350,10 +350,7 @@ textarea {
 	transition: all 0.5s ease-in;
 }
 #preloader.hide {
-	opacity: 0;
-	height: 0;
-	width: 0;
-	visibility: hidden;
+	transform: translate(-50%, -50%) scale(0);
 }
 
 .loader {
@@ -423,3 +420,24 @@ textarea {
 		opacity: 0;
 	}
 }
+
+/*----------------
+	5.6) Cursor */
+
+.cursor {
+	left: 2px;
+	top: 2px;
+	width: 10px;
+	height: 10px;
+	background-color: #010101;
+	position: absolute;
+	border-radius: 5px;
+	z-index: 12;
+	/* visibility: hidden; */
+}
+.cursorFollower {
+	transition: transform .75s;
+	width: 2px;
+	height: 2px;
+}
+  

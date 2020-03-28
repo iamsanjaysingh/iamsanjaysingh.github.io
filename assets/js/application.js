@@ -1,3 +1,17 @@
+const root = document.querySelector('html');
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+root.appendChild(cursor);
+const follower = document.createElement('div');
+follower.classList.add('cursor', 'cursorFollower');
+root.appendChild(follower);
+root.addEventListener('mousemove', e => {
+  setPosition(follower, e);
+  setPosition(cursor, e);
+});
+function setPosition(element, e) {
+  element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+}
 function threejs() {
 	this.shapeX = 0.5;
 	this.shapeY = 100;
@@ -94,8 +108,9 @@ $(document).ready(function () {
 	});
 	$(document).on('click', '#navigation a', function () {
 		$(this).parents('#header').addClass('close');
-		$(this).parents('.headerBlock').find('.headerBorder').css('border-color', $(this).find('span').css('color'));
 		$(this).parents('#wrapper').find('.page').removeClass('active');
 		$(this).parents('#wrapper').find('#' + $(this).attr('class')).addClass('active');
+		$(this).parents('.headerBlock').find('.headerBorder').css('border-color', $(this).find('span').css('color'));
+		$(this).parents('#wrapper').find('#' + $(this).attr('class')).find('.banner').addClass('animate');
 	});
 });

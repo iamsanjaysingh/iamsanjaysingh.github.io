@@ -4,3 +4,98 @@
     width: 100%;
     overflow: hidden;
 }
+
+.banner::before,
+.banner::after {
+    content: '';
+    position: absolute;
+    width: calc(50% - 20px);
+    transition: height 0.5s ease .75s;
+    height: 0;
+}
+.banner::before {
+    left: 20px;
+    background: #f8f8f8;
+    top: 0;
+    transform: translateY(20px);
+}
+.banner::after {
+    right: 20px;
+    bottom: 0;
+    transform: translateY(-20px);
+}
+.banner.animate::before,
+.banner.animate::after {
+    height: calc(100% - 40px);
+}
+
+#home .banner::after {
+    background: #ff5858;
+}
+#skill .banner::after {
+    background: #f3c130;
+}
+#experience .banner::after {
+    background: #3498db;
+}
+#qualification .banner::after {
+    background: #52be80;
+}
+#contact .banner::after {
+    background: #95a5a6;
+}
+
+
+.bannercontent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+h1 {
+    font-size: 0;
+}
+h1 .initial {
+    color: #ff5858;
+    text-shadow: -3px 3px rgba(255, 88, 81, 0.5);
+}
+h1 .final {
+    color: #f8f8f8;
+    text-shadow: -3px 3px rgba(248, 248, 248, 0.5);
+}
+h1 span {
+    font-size: 16rem;
+    overflow: hidden;
+    display: inline-block;
+    text-shadow: -3px 3px rgba(0, 0, 0, 0.5);
+}
+h1 small {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.5s ease .75s, opacity 0.5s ease .75s;
+}
+h1 .top {
+    transform: translateY(-100%);
+}
+h1 .bottom {
+    transform: translateY(100%);    
+}
+h1 .left {
+    transform: translateX(-100%);    
+}
+h1 .right {
+    transform: translateX(100%);
+}
+h1 .opaque {
+    opacity: 0;
+}
+.banner.animate h1 .top,
+.banner.animate h1 .left,
+.banner.animate h1 .bottom,
+.banner.animate h1 .right {
+    transform: translate(0);
+}
+.banner.animate h1 .opaque {
+    opacity: 1;
+}
